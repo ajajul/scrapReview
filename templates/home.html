@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/home.css') }}">
+</head>
+
+<body>
+    <div class="X">
+        <a href="/get-reviews">
+            <button onclick="fetchAndSaveReviews()">Fetch reviews</button>
+        </a>
+        <ul class="SG">
+            {% for item in data %}
+                <li class="sgLi">
+                    <div class="box">
+                        <h3>{{item.reviewer_name}}</h3>
+                        <ul class="df">
+                            <li>Rating : {{item.rating}}</li>
+                            <li>Time : {{item.review_time}}</li>
+                            <li>Review : <p>{{item.review_text}}</p></li>
+                        </ul>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>

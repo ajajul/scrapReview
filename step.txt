@@ -1,0 +1,18 @@
+1. Activate PostgreSQL server:
+    $ cd C:\Program Files\PostgreSQL\10\bin
+    $ psql -U postgres
+      Password for user postgres: 12345
+
+2. Create 'reviews' database:
+    postgres=#  CREATE DATABASE reviews;
+    postgres=#  \l 
+    postgres=#  \c reviews
+
+3.  flask db init
+    flask db migrate
+    flask db upgrade
+
+
+4. run server
+    $ python app.py    
+                 
